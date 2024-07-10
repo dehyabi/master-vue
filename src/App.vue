@@ -1,16 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="container">
+    <nav>
+      <RouterLink :to="{name: 'Home'}">Home</RouterLink> |
+      <RouterLink :to="{name: 'About'}">About</RouterLink> |
+      <RouterLink to="/user/Dehya Qalbi/role/Admin">User</RouterLink>
+    </nav>
+
+    <RouterView></RouterView>
+  </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  props: ["ActiveClass"]
 }
 </script>
 
@@ -22,5 +27,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.active {
+  color: red
 }
 </style>
